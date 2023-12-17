@@ -145,6 +145,13 @@
   }  
   
   </style>
+
+  <!-- Import element definition -->
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"
+  ></script>
+ 
   <script language="javascript">
 /* =================================================================================================
  * TransMenu 
@@ -1051,7 +1058,10 @@ if (window.attachEvent) {
     menu1.addItem("Recalls", "./01_General/02_Recalls/RecallStatus.html");
     menu1.addItem("Tools", "./01_General/03_Tools/ToolKit.html"); 
     menu1.addItem("Manual", "./01_General/04_WS_Manual/WSManual.html"); 
-    menu1.addItem("Alt. Parts", "./01_General/05_AltParts/AltParts.md"); 
+
+    // old html reference
+    // menu1.addItem("Alt. Parts", "./01_General/05_AltParts/AltParts.html"); 
+    menu1.addItem("Alt. Parts", <zero-md src="./01_General/05_AltParts/AltParts.md"</zero-md>) ; 
     menu1.addItem("Break In", "./01_General/06_BreakIn/BreakIn.html"); 
 
     //==================================================================================================
