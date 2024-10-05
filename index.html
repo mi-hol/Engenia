@@ -1366,9 +1366,9 @@ Engenia's Tornado 900 Tre</font></font></font> <img src="austflag.gif" alt="Auss
 // requires different logic for sub-sites hosted on "github.io" 
 var gh_subsite = "github.io"; 
 var domainroot=window.location.hostname;
-if  (domainroot.indexOf(gh_subsite) !== -1); // true domainroot contains "github.io"
-  var domainroot=window.location.href;
-
+if  (domainroot.indexOf(gh_subsite) !== -1) {           // true domainroot contains "github.io"
+    var domainroot=window.location.href;
+}
 function Gsitesearch(curobj){curobj.q.value="site:"+domainroot+" "+curobj.qfront.value}
 </script>
 
