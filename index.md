@@ -8,8 +8,8 @@ permalink: /
  <meta name="description" content="How to keep a Benelli Tornado 900 running reliably, issues that MUST be addressed, and others you may encounter.">
  <META name="keywords" content="Benelli Tornado Novocentro Tre maintenance issues alternator drive shaft tips recalls manual tools alternative parts mirrors camchain clutch coils ignition ECU AFR Tuner lights hot start fault frame knock gearshift battery">
  <link rel="shortcut icon" href="EngeniaIcon.ico">
-  <!-- these two are not necessary, they are for the layout of this page itself; not transmenus. -->
-  <!-- styles.css -->
+  <!--- these two are not necessary, they are for the layout of this page itself; not transmenus. -->
+  <!--- styles.css -->
   <style rel="stylesheet" type="text/css">
 /* wrap controls the border width of the main menu - you may need to change  this */
 #wrap {
@@ -66,8 +66,8 @@ permalink: /
   
   </style>
 
-  <!-- these two are required for transmenus to function -->
-  <!-- transmenu.css -->
+  <!--- these two are required for transmenus to function -->
+  <!--- transmenu.css -->
   <style rel="stylesheet" type="text/css">
 /* this is the clipping region for the menu. it's width and height get set by script, depending on the size of the items table */
 .transMenu {
@@ -929,8 +929,8 @@ if (window.attachEvent) {
 }  
   </script>
 
-<!- HERE'S WHERE THE MENUS ARE DEFINED -> <!- HERE'S WHERE THE MENUS ARE DEFINED -> <!- HERE'S WHERE THE MENUS ARE DEFINED ->
-<!- HERE'S WHERE THE MENUS ARE DEFINED -> <!- HERE'S WHERE THE MENUS ARE DEFINED -> <!- HERE'S WHERE THE MENUS ARE DEFINED ->
+<!--- HERE'S WHERE THE MENUS ARE DEFINED --> <!--- HERE'S WHERE THE MENUS ARE DEFINED --> <!--- HERE'S WHERE THE MENUS ARE DEFINED -->
+<!-- HERE'S WHERE THE MENUS ARE DEFINED --> <!-- HERE'S WHERE THE MENUS ARE DEFINED --> <!-- HERE'S WHERE THE MENUS ARE DEFINED -->
 
   <script language="javascript">
     function init() {
