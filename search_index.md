@@ -3,7 +3,18 @@ layout: null
 ---
 {%- assign stop_words = site.data.stop_words.words -%}
 {%- assign split_chars = site.data.split_chars.chars -%}
-[
+{
+  "debug": {
+    "static_files_count": {{ site.static_files | size }},
+    "pages_count": {{ site.pages | size }},
+    "posts_count": {{ site.posts | size }},
+    "static_files_sample": [
+      {%- for file in site.static_files limit: 10 -%}
+        "{{ file.path }}"{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ]
+  },
+  "index": [
 {%- for file in site.static_files -%}
   {%- if file.path contains '.html' and file.path != '/search.json' and file.path != '/search_index.json' -%}
     {%- assign filename = file.name | remove: '.html' -%}
@@ -73,4 +84,5 @@ layout: null
     }
   {%- endunless -%}
 {%- endfor -%}
-]
+  ]
+}
