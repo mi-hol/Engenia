@@ -41,11 +41,33 @@ layout: null
 {%- for page in site.pages -%}
   {%- unless page.url == '/Engenia/search/' or page.url == '/Engenia/' -%}
     ,
+    {%- assign page_content = page.content | append: ' ' | append: page.title | strip_html | downcase | escape -%}
+    {%- for char in split_chars -%}
+      {%- assign page_content = page_content | replace: char, ' ' -%}
+    {%- endfor -%}
+    {%- assign page_words = page_content | split: ' ' -%}
+    {%- assign page_filtered_words = page_words | where_exp: "word", "word.size > 1" -%}
+    {%- assign page_stop_words_filtered = '' -%}
+    {%- for word in page_filtered_words -%}
+      {%- unless stop_words contains word -%}
+        {%- if page_stop_words_filtered == '' -%}
+          {%- assign page_stop_words_filtered = word -%}
+        {%- else -%}
+          {%- assign page_stop_words_filtered = page_stop_words_filtered | append: ',' | append: word -%}
+        {%- endif -%}
+      {%- endunless -%}
+    {%- endfor -%}
+    {%- assign page_filtered_words = page_stop_words_filtered | split: ',' -%}
+    {%- assign page_grouped_words = page_filtered_words | group_by_exp: "word", "word" -%}
     {
       "title":{{ page.title | default: 'Untitled' | jsonify }},
       "date":"N/A",
       "tags":[],
-      "keywords":{},
+      "keywords":{
+        {%- for group in page_grouped_words -%}
+          {{ group.name | jsonify }}:{{ group.items | size }}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      },
       "url":"{{ page.url | relative_url }}",
       "excerpt":{{ page.excerpt | default: '' | strip_html | truncate: 200 | strip_newlines | jsonify }}
     }
