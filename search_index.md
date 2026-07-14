@@ -1,20 +1,23 @@
 ---
 layout: null
 ---
-{
-  "debug": {
-    "static_files_count": {{ site.static_files | size }},
-    "pages_count": {{ site.pages | size }},
-    "posts_count": {{ site.posts | size }}
-  },
-  "sample_static_files": [
-    {% for file in site.static_files limit: 5 %}
-    "{{ file.path }}"{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ],
-  "sample_pages": [
-    {% for page in site.pages limit: 5 %}
-    "{{ page.url }}"{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ]
-}
+[
+{% for page in site.data.pages.pages %}
+  {
+    "title": {{ page.title | jsonify }},
+    "date": "N/A",
+    "tags": [],
+    "keywords": {
+      {% assign sanitized = page.title | downcase %}
+      {% assign words = sanitized | split: ' ' %}
+      {% for word in words %}
+        {% if word.size > 1 %}
+          {{ word | jsonify }}: 1{% unless forloop.last %},{% endunless %}
+        {% endif %}
+      {% endfor %}
+    },
+    "url": "{{ site.baseurl }}{{ page.path }}",
+    "excerpt": ""
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
