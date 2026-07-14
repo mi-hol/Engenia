@@ -2,7 +2,7 @@
 layout: null
 ---
 [
-{% for page in site.data.pages.pages %}
+{% for page in site.data.pages %}
   {
     "title": {{ page.title | jsonify }},
     "date": "N/A",
