@@ -1,3 +1,7 @@
+---
+layout: default
+permalink: /
+---
 <html>
 <head>
  <title>Engenia's Benelli Tornado Novocentro Tre</title>
@@ -1369,3 +1373,4 @@ Engenia's Tornado 900 Tre</font></font></font> <img src="austflag.gif" alt="Auss
 </body>
 
 </html>
+
