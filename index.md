@@ -1356,18 +1356,17 @@ Engenia's Tornado 900 Tre</font></font></font> <img src="austflag.gif" alt="Auss
     </tr>
   </table>
 
-  </center>
 </p>
  
-<! Add internal site search because "Google search" doesn't work on github! >
-<! Details are explained on https://www.ostberg.dev/projects/2025/02/16/adding-search-to-github-pages.html >
+<!-- Add internal site search because "Google search" doesn't work on github! -->
+<!-- Details are explained on https://www.ostberg.dev/projects/2025/02/16/adding-search-to-github-pages.html -->
 <div id="search" data-baseurl="{{ site.baseurl }}">
   <input type="text" id="search-input" placeholder="Search site content">
 </div>
 
 <script src="/Engenia/assets/js/search.js"></script>
  
-<p><font size="-2"><center> Updated 12 Jul 2026 (internal Site Search added)</center></font>
+<p><font size="-2"><center> Updated 14 Jul 2026 (internal Site Search added)</center></font>
 </p>
 
 </body>
